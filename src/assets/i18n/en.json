@@ -1,0 +1,122 @@
+{
+  "brand": {
+    "name": "Sharif Charity Foundation",
+    "tagline": "Serving in Trust. Delivering in Faith."
+  },
+  "nav": {
+    "primary": "Primary navigation",
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "projects": "Projects",
+    "transparency": "Transparency",
+    "news": "News",
+    "contact": "Contact",
+    "donate": "Donate",
+    "language": "Language",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "programs": {
+    "orphans": "Orphans",
+    "mosques": "Mosques",
+    "schools": "Schools",
+    "hadiya": "Hadiya"
+  },
+  "footer": {
+    "description": "Sharif Charity Foundation serves orphans, mosques, schools and families in need across Nigeria. Every donation is delivered with care and accounted for openly.",
+    "quickLinks": "Quick Links",
+    "programs": "Programs",
+    "contact": "Contact",
+    "location": "Kano, Nigeria",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "followUs": "Follow Us",
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "x": "X (formerly Twitter)"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Receive news about our work and impact.",
+      "placeholder": "Your email address",
+      "submit": "Subscribe"
+    },
+    "copyright": "© 2015–2026 Sharif Charity Foundation. Registered in Nigeria. All rights reserved.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "home": {
+    "placeholder": {
+      "title": "Sharif Charity Foundation — Home"
+    },
+    "hero": {
+      "title": "Sharif Charity Foundation",
+      "subtitle": "Hope delivered, one community at a time.",
+      "primaryCta": "Donate Now",
+      "secondaryCta": "Learn More"
+    },
+    "impact": {
+      "title": "Our Impact",
+      "subtitle": "Measurable change where it matters most.",
+      "beneficiaries": "Beneficiaries Served",
+      "projects": "Projects Completed",
+      "countries": "Countries Reached",
+      "volunteers": "Active Volunteers"
+    },
+    "programs": {
+      "title": "What We Do",
+      "subtitle": "Programs built around lasting need.",
+      "viewAll": "View All Programs"
+    },
+    "stories": {
+      "title": "Stories of Change",
+      "subtitle": "The people behind the numbers.",
+      "readMore": "Read More"
+    },
+    "cta": {
+      "title": "Your Support Changes Lives",
+      "description": "Every contribution goes directly to the families who need it.",
+      "button": "Give Today"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Who we are and why we serve.",
+    "mission": {
+      "title": "Our Mission",
+      "body": "Placeholder text for the foundation mission statement."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "body": "Placeholder text for the foundation vision statement."
+    },
+    "values": {
+      "title": "Our Values",
+      "integrity": "Integrity",
+      "compassion": "Compassion",
+      "transparency": "Transparency",
+      "accountability": "Accountability"
+    },
+    "history": {
+      "title": "Our Story",
+      "body": "Placeholder text for the history of the foundation."
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "The people leading the work."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "readMore": "Read more",
+    "back": "Back",
+    "submit": "Submit"
+  }
+}

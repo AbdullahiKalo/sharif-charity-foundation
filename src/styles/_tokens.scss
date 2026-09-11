@@ -1,0 +1,28 @@
+/* Design tokens — Sharif Charity Foundation
+ * Exposed as CSS custom properties so they can be consumed from SCSS,
+ * plain CSS and the Tailwind theme (see tailwind.config.js).
+ */
+:root {
+  /* Brand — green */
+  --color-primary: #0a5c36;
+  --color-primary-dark: #083f26;
+  --color-primary-light: #1a7a4d;
+
+  /* Brand — gold accent */
+  --color-gold: #c9a961;
+  --color-gold-dark: #a68a4e;
+
+  /* Surfaces */
+  --color-bg-warm: #faf8f4;
+
+  /* Typography */
+  --color-text-body: #1f1f1f;
+  --color-text-muted: #5c5c5c;
+
+  /* Lines */
+  --color-border-soft: #e5e5e5;
+
+  /* Font stacks */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+}
