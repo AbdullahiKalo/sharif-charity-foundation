@@ -2,7 +2,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'outline-light' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 const BASE_CLASSES =
@@ -12,6 +12,8 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary: 'bg-primary text-white hover:bg-primary-dark',
   secondary: 'bg-gold text-primary-dark hover:bg-gold-dark',
   outline: 'border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white',
+  'outline-light':
+    'border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary-dark',
   ghost: 'bg-transparent text-primary hover:bg-bg-warm',
 };
 
@@ -45,27 +47,30 @@ const SIZE_CLASSES: Record<ButtonSize, string> = {
       >
         <ng-container [ngTemplateOutlet]="inner" />
       </a>
-    } @else if (href(); as url) {
-      <a
-        [href]="url"
-        [target]="target()"
-        [attr.rel]="target() === '_blank' ? 'noopener' : null"
-        [class]="classes()"
-        [attr.aria-label]="ariaLabel()"
-        [attr.aria-disabled]="disabled() ? true : null"
-      >
-        <ng-container [ngTemplateOutlet]="inner" />
-      </a>
     } @else {
-      <button
-        [type]="type()"
-        [disabled]="disabled()"
-        [class]="classes()"
-        [attr.aria-label]="ariaLabel()"
-        (click)="pressed.emit($event)"
-      >
-        <ng-container [ngTemplateOutlet]="inner" />
-      </button>
+      <!-- Nested, not chained: only a primary if-block may bind with an alias. -->
+      @if (href(); as url) {
+        <a
+          [href]="url"
+          [target]="target()"
+          [attr.rel]="target() === '_blank' ? 'noopener' : null"
+          [class]="classes()"
+          [attr.aria-label]="ariaLabel()"
+          [attr.aria-disabled]="disabled() ? true : null"
+        >
+          <ng-container [ngTemplateOutlet]="inner" />
+        </a>
+      } @else {
+        <button
+          [type]="type()"
+          [disabled]="disabled()"
+          [class]="classes()"
+          [attr.aria-label]="ariaLabel()"
+          (click)="pressed.emit($event)"
+        >
+          <ng-container [ngTemplateOutlet]="inner" />
+        </button>
+      }
     }
   `,
 })

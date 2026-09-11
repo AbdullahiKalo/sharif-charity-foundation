@@ -7,5 +7,9 @@
     "types": []
   },
   "files": ["src/main.ts"],
-  "include": ["src/**/*.d.ts"]
+  /* Every source file is included, not just what main.ts reaches, so a
+   * component nothing imports yet is still type-checked by `ng build`.
+   * Specs are excluded: they belong to tsconfig.spec.json and need Jasmine types. */
+  "include": ["src/**/*.d.ts", "src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
 }

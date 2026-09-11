@@ -32,16 +32,19 @@ import { RouterLink } from '@angular/router';
             {{ label }}
             <span aria-hidden="true">&rarr;</span>
           </a>
-        } @else if (href(); as url) {
-          <a
-            [href]="url"
-            target="_blank"
-            rel="noopener"
-            class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-dark"
-          >
-            {{ label }}
-            <span aria-hidden="true">&rarr;</span>
-          </a>
+        } @else {
+          <!-- Nested, not chained: only a primary if-block may bind with an alias. -->
+          @if (href(); as url) {
+            <a
+              [href]="url"
+              target="_blank"
+              rel="noopener"
+              class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-dark"
+            >
+              {{ label }}
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          }
         }
       }
     </article>

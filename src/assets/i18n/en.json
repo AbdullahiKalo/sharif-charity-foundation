@@ -17,12 +17,6 @@
     "menu": "Menu",
     "close": "Close"
   },
-  "programs": {
-    "orphans": "Orphans",
-    "mosques": "Mosques",
-    "schools": "Schools",
-    "hadiya": "Hadiya"
-  },
   "projects": {
     "funding": "Funding",
     "funded": "{{percent}}% funded",
@@ -61,37 +55,112 @@
     "terms": "Terms of Use"
   },
   "home": {
-    "placeholder": {
-      "title": "Sharif Charity Foundation — Home"
-    },
     "hero": {
-      "title": "Sharif Charity Foundation",
-      "subtitle": "Hope delivered, one community at a time.",
-      "primaryCta": "Donate Now",
-      "secondaryCta": "Learn More"
+      "eyebrow": "An Islamic Charitable Foundation",
+      "title": "Trust. Transparency. Impact.",
+      "description": "For over a decade, Sharif Charity Foundation has served orphans, built mosques and schools, and delivered hope to families across Nigeria and beyond. Every donation traceable. Every project verified. Every trust honored.",
+      "donate": "Donate Now",
+      "programs": "Our Programs"
     },
     "impact": {
       "title": "Our Impact",
-      "subtitle": "Measurable change where it matters most.",
-      "beneficiaries": "Beneficiaries Served",
-      "projects": "Projects Completed",
-      "countries": "Countries Reached",
-      "volunteers": "Active Volunteers"
+      "orphans": {
+        "value": "500",
+        "label": "Orphans Sponsored"
+      },
+      "mosques": {
+        "value": "40",
+        "label": "Mosques Built"
+      },
+      "schools": {
+        "value": "15",
+        "label": "Schools Constructed"
+      },
+      "families": {
+        "value": "10,000",
+        "label": "Families Served"
+      }
+    },
+    "mission": {
+      "eyebrow": "Our Mission",
+      "heading": "Faith in action, backed by proof",
+      "paragraphOne": "We exist to turn the generosity of our donors into lasting relief for the people who need it most. Orphans are sponsored through to adulthood, mosques and schools are built to serve whole communities, and families in hardship are supported with dignity.",
+      "paragraphTwo": "Charity given in trust must be accounted for. Every project we undertake is documented from the first contribution to the final handover, so that donors can see exactly where their giving went and what it changed.",
+      "photoLabel": "Foundation photo coming soon"
     },
     "programs": {
-      "title": "What We Do",
-      "subtitle": "Programs built around lasting need.",
-      "viewAll": "View All Programs"
+      "eyebrow": "What We Do",
+      "heading": "Our four programs",
+      "learnMore": "Learn more",
+      "orphans": {
+        "title": "Orphan Sponsorship",
+        "description": "Monthly support that covers food, clothing, healthcare and schooling for orphaned children."
+      },
+      "mosques": {
+        "title": "Mosque Construction",
+        "description": "Building and renovating places of worship that serve as the centre of community life."
+      },
+      "schools": {
+        "title": "School Construction",
+        "description": "Classrooms, furniture and learning materials that put education within reach of every child."
+      },
+      "hadiya": {
+        "title": "Ramadan & Eid Hadiya",
+        "description": "Seasonal food parcels and gifts delivered to families in hardship during Ramadan and Eid."
+      }
     },
-    "stories": {
-      "title": "Stories of Change",
-      "subtitle": "The people behind the numbers.",
-      "readMore": "Read More"
+    "pillars": {
+      "eyebrow": "Why Donors Trust Us",
+      "heading": "Six pillars of donor trust",
+      "verifiability": {
+        "name": "Verifiability",
+        "description": "Every project is documented with photographs, receipts and named beneficiaries that donors can check."
+      },
+      "traceability": {
+        "name": "Traceability",
+        "description": "Each donation is recorded against the specific project it funded, from receipt through to delivery."
+      },
+      "independence": {
+        "name": "Independence",
+        "description": "We accept no political or partisan funding, so our decisions answer only to need on the ground."
+      },
+      "accountability": {
+        "name": "Accountability",
+        "description": "Our accounts are reviewed and published, and every enquiry about spending receives a direct answer."
+      },
+      "privacy": {
+        "name": "Privacy",
+        "description": "Beneficiaries are treated with dignity, and no family is photographed or named without consent."
+      },
+      "continuity": {
+        "name": "Continuity",
+        "description": "Sponsorships and projects are seen through to completion rather than abandoned mid-way."
+      }
+    },
+    "projects": {
+      "heading": "Recent projects",
+      "viewAll": "View All Projects",
+      "alFalah": {
+        "title": "Al-Falah Mosque",
+        "description": "A community mosque with ablution facilities and a classroom for weekend Qur'an lessons.",
+        "location": "Sokoto, Nigeria"
+      },
+      "rahma": {
+        "title": "Rahma Primary School",
+        "description": "Six classrooms, furniture and a borehole serving children from the surrounding villages.",
+        "location": "Kaduna, Nigeria"
+      },
+      "ramadan": {
+        "title": "Ramadan 2026 Food Distribution",
+        "description": "Food parcels delivered to households through the month of Ramadan and on the day of Eid.",
+        "location": "Kano, Nigeria"
+      }
     },
     "cta": {
-      "title": "Your Support Changes Lives",
-      "description": "Every contribution goes directly to the families who need it.",
-      "button": "Give Today"
+      "heading": "Ready to make an impact?",
+      "description": "Contact us today to sponsor an orphan, fund a project, or partner with us.",
+      "donate": "Donate Now",
+      "contact": "Contact Us"
     }
   },
   "about": {
