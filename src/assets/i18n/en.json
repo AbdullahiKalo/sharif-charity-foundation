@@ -37,6 +37,225 @@
       "name": "Continuity"
     }
   },
+  "contact": {
+    "labels": {
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "location": "Location"
+    },
+    "phone": "+234 907 210 2679",
+    "whatsapp": "+234 907 210 2679",
+    "email": "muhammadsharifhamza@gmail.com",
+    "location": "Kano, Nigeria"
+  },
+  "programs": {
+    "learnMore": "Learn more",
+    "overview": {
+      "eyebrow": "What We Do",
+      "heading": "Our programs",
+      "subheading": "Four core programs that channel your donations to where they create the most impact.",
+      "ctaHeading": "Not sure where to give?",
+      "ctaDescription": "Tell us what matters most to you and we will match your giving to a project that needs it.",
+      "ctaProjects": "See Our Projects"
+    },
+    "page": {
+      "eyebrow": "Program",
+      "aboutEyebrow": "About This Program",
+      "stepsEyebrow": "How It Works",
+      "supportHeading": "How to support this program",
+      "supportSubheading": "Speak to us directly and we will walk you through the options.",
+      "supportNote": "For now, please reach out directly. Online donation coming soon.",
+      "ctaContact": "Contact Us",
+      "ctaAll": "All Programs"
+    },
+    "orphans": {
+      "title": "Orphan Sponsorship",
+      "shortDescription": "Monthly support that covers food, clothing, healthcare and schooling for orphaned children.",
+      "overviewDescription": "Monthly support that covers food, clothing, healthcare and schooling for a named orphaned child. Sponsors receive progress reports and stay with the child until their education is complete.",
+      "subheading": "Standing with a child until they can stand on their own.",
+      "photoLabel": "Sponsored children photo coming soon",
+      "aboutHeading": "A commitment measured in years, not months",
+      "aboutOne": "Losing a parent rarely costs a child only one thing. School fees go first, then medical care, then the small dignities that let a child sit in a classroom without shame. Our sponsorship program treats the whole of that loss rather than one part of it.",
+      "aboutTwo": "Each sponsored child is registered with their guardian, assessed for what the household actually needs, and matched to a sponsor who commits to monthly support. Funds reach the guardian directly and are reconciled against receipts every term.",
+      "aboutThree": "Sponsorship runs until the child finishes their education. We do not close a file because a funding cycle ended, and where a sponsor has to step away we carry the child ourselves until a new sponsor is found.",
+      "stepsHeading": "From first visit to final report",
+      "steps": {
+        "registration": {
+          "title": "Registration",
+          "description": "A field volunteer visits the household, verifies the circumstances with the guardian and the local imam, and records the child."
+        },
+        "matching": {
+          "title": "Sponsorship matching",
+          "description": "The child is matched to a sponsor, who receives a profile covering their age, schooling and the specific needs identified."
+        },
+        "support": {
+          "title": "Monthly support",
+          "description": "Funds are delivered to the guardian each month for food, clothing, healthcare and school costs, against signed receipts."
+        },
+        "reports": {
+          "title": "Progress reports",
+          "description": "Sponsors receive termly updates on schooling and health, with photographs shared only where the guardian consents."
+        }
+      },
+      "impactHeading": "Impact so far",
+      "stats": {
+        "sponsored": {
+          "value": "500",
+          "label": "Children Sponsored"
+        },
+        "states": {
+          "value": "7",
+          "label": "States Covered"
+        },
+        "retention": {
+          "value": "96",
+          "label": "Stay in School"
+        },
+        "graduates": {
+          "value": "120",
+          "label": "Completed Secondary"
+        }
+      },
+      "ctaHeading": "Sponsor a child this month",
+      "ctaDescription": "Talk to us about sponsoring a named child, or about contributing to the shared fund that covers children still waiting for a sponsor."
+    },
+    "mosques": {
+      "title": "Mosque Construction",
+      "shortDescription": "Building and renovating places of worship that serve as the centre of community life.",
+      "overviewDescription": "Building and renovating places of worship that serve as the centre of community life. Every mosque is built to last, with ablution facilities and, where the village needs one, a borehole.",
+      "subheading": "A place to pray, and a place for a community to gather.",
+      "photoLabel": "Mosque construction photo coming soon",
+      "aboutHeading": "Built once, built properly",
+      "aboutOne": "In many of the villages we work in, the mosque is the only public building. It is where disputes are settled, where children learn to read, and where news reaches everyone at once. Building one well changes far more than the Friday prayer.",
+      "aboutTwo": "We build in blockwork with a roof designed for the rains, install ablution facilities, and sink a borehole where the community has no clean water. Local labour is hired and paid, so the construction itself puts money into the village.",
+      "stepsHeading": "How a mosque gets built",
+      "steps": {
+        "survey": {
+          "title": "Community survey",
+          "description": "We meet the village elders, confirm the land is properly donated or titled, and agree the size the community can maintain."
+        },
+        "build": {
+          "title": "Construction",
+          "description": "Local builders are contracted and supervised to completion, with costs and photographs recorded at every stage."
+        },
+        "handover": {
+          "title": "Handover",
+          "description": "The mosque is handed to the community with a maintenance plan, and revisited within the year to check how it is holding up."
+        }
+      },
+      "impactHeading": "Impact so far",
+      "stats": {
+        "built": {
+          "value": "40",
+          "label": "Mosques Completed"
+        },
+        "worshippers": {
+          "value": "12,000",
+          "label": "Regular Worshippers"
+        },
+        "boreholes": {
+          "value": "18",
+          "label": "Boreholes Sunk"
+        }
+      },
+      "ctaHeading": "Fund a mosque in your name",
+      "ctaDescription": "A full mosque, a roof, a borehole or a single course of blocks. Contact us and we will show you what each level of support builds."
+    },
+    "schools": {
+      "title": "School Construction",
+      "shortDescription": "Classrooms, furniture and learning materials that put education within reach of every child.",
+      "overviewDescription": "Classrooms, furniture and learning materials that put education within reach of every child. We build where the nearest school is too far to walk, then stay involved after the doors open.",
+      "subheading": "Putting a classroom within walking distance of every child.",
+      "photoLabel": "Classroom photo coming soon",
+      "aboutHeading": "The building is only the beginning",
+      "aboutOne": "A school with no desks, no books and no teacher is a building, not an education. Our construction program budgets for what happens after the roof goes on, because that is where most school projects quietly fail.",
+      "aboutTwo": "We build classrooms in communities where the nearest school is an hour on foot, and we equip them with desks, boards and materials for the first full academic year. Where possible the school is sited beside an existing mosque so the two reinforce each other.",
+      "aboutThree": "We then stay in contact with the head teacher, track enrolment term by term, and return to repair what the weather has damaged. A school we built ten years ago is still our responsibility.",
+      "stepsHeading": "From need to enrolment",
+      "steps": {
+        "need": {
+          "title": "Needs assessment",
+          "description": "We count the children in the catchment, measure the distance to the nearest school, and confirm the community will staff it."
+        },
+        "construction": {
+          "title": "Construction",
+          "description": "Classrooms, latrines and a water point are built by contracted local labour under our supervision."
+        },
+        "equip": {
+          "title": "Equipping",
+          "description": "Desks, boards, textbooks and teaching materials are supplied for the first full academic year."
+        },
+        "followUp": {
+          "title": "Follow-up",
+          "description": "Enrolment is tracked each term and the buildings are inspected annually, with repairs funded by the foundation."
+        }
+      },
+      "impactHeading": "Impact so far",
+      "stats": {
+        "schools": {
+          "value": "15",
+          "label": "Schools Constructed"
+        },
+        "classrooms": {
+          "value": "90",
+          "label": "Classrooms Built"
+        },
+        "pupils": {
+          "value": "4,500",
+          "label": "Pupils Enrolled"
+        },
+        "teachers": {
+          "value": "60",
+          "label": "Teachers Supported"
+        }
+      },
+      "ctaHeading": "Build a classroom that outlasts us",
+      "ctaDescription": "Fund a classroom, a set of desks or a full school. Contact us for the current list of communities waiting on a build."
+    },
+    "hadiya": {
+      "title": "Ramadan & Eid Hadiya",
+      "shortDescription": "Seasonal food parcels and gifts delivered to families in hardship during Ramadan and Eid.",
+      "overviewDescription": "Seasonal food parcels and gifts delivered to families in hardship during Ramadan and Eid. Parcels are sized to the household and delivered to the door, never handed out from a queue.",
+      "subheading": "Making sure no household breaks its fast on nothing.",
+      "photoLabel": "Ramadan distribution photo coming soon",
+      "aboutHeading": "Delivered to the door, not to a queue",
+      "aboutOne": "Ramadan is the hardest month of the year for a household with no income. Prices rise, work is scarce, and the families least able to cope are the ones least likely to ask. Our distribution is built around finding them rather than waiting for them.",
+      "aboutTwo": "Parcels are sized to the household and carried to the door, so that no family has to stand in a line to be fed. On the day of Eid, children in the same households receive clothes and a small gift, because a festival a child cannot join is not much of a festival.",
+      "stepsHeading": "How a distribution runs",
+      "steps": {
+        "identify": {
+          "title": "Identifying households",
+          "description": "Ward heads and local imams help us list the households in genuine need, which we verify by visit before Ramadan begins."
+        },
+        "pack": {
+          "title": "Packing",
+          "description": "Staples are bought in bulk at market rates and packed into parcels sized to each household, with costs published afterwards."
+        },
+        "deliver": {
+          "title": "Delivery",
+          "description": "Volunteers deliver to the door through the month, and return on Eid with clothes and gifts for the children."
+        }
+      },
+      "impactHeading": "Impact so far",
+      "stats": {
+        "parcels": {
+          "value": "25,000",
+          "label": "Parcels Delivered"
+        },
+        "households": {
+          "value": "10,000",
+          "label": "Households Reached"
+        },
+        "communities": {
+          "value": "32",
+          "label": "Communities Served"
+        }
+      },
+      "ctaHeading": "Feed a household this Ramadan",
+      "ctaDescription": "One parcel, ten parcels or a whole community. Contact us before Ramadan and we will tell you exactly where your giving will land."
+    }
+  },
   "projects": {
     "funding": "Funding",
     "funded": "{{percent}}% funded",
@@ -110,24 +329,7 @@
     },
     "programs": {
       "eyebrow": "What We Do",
-      "heading": "Our four programs",
-      "learnMore": "Learn more",
-      "orphans": {
-        "title": "Orphan Sponsorship",
-        "description": "Monthly support that covers food, clothing, healthcare and schooling for orphaned children."
-      },
-      "mosques": {
-        "title": "Mosque Construction",
-        "description": "Building and renovating places of worship that serve as the centre of community life."
-      },
-      "schools": {
-        "title": "School Construction",
-        "description": "Classrooms, furniture and learning materials that put education within reach of every child."
-      },
-      "hadiya": {
-        "title": "Ramadan & Eid Hadiya",
-        "description": "Seasonal food parcels and gifts delivered to families in hardship during Ramadan and Eid."
-      }
+      "heading": "Our four programs"
     },
     "pillars": {
       "eyebrow": "Why Donors Trust Us",

@@ -190,9 +190,9 @@ export class FooterComponent {
    * uses, so the four names are defined in exactly one place.
    */
   readonly programLinks: readonly FooterLink[] = [
-    { key: 'home.programs.orphans.title', path: '/programs/orphans' },
-    { key: 'home.programs.mosques.title', path: '/programs/mosques' },
-    { key: 'home.programs.schools.title', path: '/programs/schools' },
-    { key: 'home.programs.hadiya.title', path: '/programs/hadiya' },
+    { key: 'programs.orphans.title', path: '/programs/orphans' },
+    { key: 'programs.mosques.title', path: '/programs/mosques' },
+    { key: 'programs.schools.title', path: '/programs/schools' },
+    { key: 'programs.hadiya.title', path: '/programs/hadiya' },
   ];
 }
