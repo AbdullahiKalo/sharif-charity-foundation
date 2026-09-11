@@ -23,6 +23,15 @@
     "schools": "Schools",
     "hadiya": "Hadiya"
   },
+  "projects": {
+    "funding": "Funding",
+    "funded": "{{percent}}% funded",
+    "status": {
+      "ongoing": "Ongoing",
+      "completed": "Completed",
+      "planning": "Planning"
+    }
+  },
   "footer": {
     "description": "Sharif Charity Foundation serves orphans, mosques, schools and families in need across Nigeria. Every donation is delivered with care and accounted for openly.",
     "quickLinks": "Quick Links",
