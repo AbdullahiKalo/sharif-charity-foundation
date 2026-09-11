@@ -460,6 +460,94 @@
       "programs": "Our Programs"
     }
   },
+  "transparency": {
+    "hero": {
+      "eyebrow": "Our Accountability",
+      "heading": "Full transparency, always",
+      "subheading": "The full picture of how funds are raised, how they are spent, and the impact they create."
+    },
+    "impact": {
+      "heading": "Funds and impact at a glance",
+      "asOf": "As of {{year}}",
+      "raised": {
+        "value": "₦420M",
+        "label": "Total Raised (Est.)"
+      },
+      "disbursed": {
+        "value": "₦385M",
+        "label": "Total Disbursed"
+      },
+      "projects": {
+        "value": "12",
+        "label": "Active Projects"
+      },
+      "beneficiaries": {
+        "value": "10,000",
+        "label": "Beneficiaries Served"
+      }
+    },
+    "funds": {
+      "eyebrow": "Financial Controls",
+      "heading": "How we handle funds",
+      "segregation": {
+        "title": "Fund Segregation",
+        "description": "Money given for a named project is held separately from general operating funds and cannot be spent on anything else. A donation for a school builds that school, even if another programme is short."
+      },
+      "signatories": {
+        "title": "Multi-Signatory Approval",
+        "description": "No single person can move foundation money. Every disbursement above a set threshold requires two trustee signatures and a written justification filed against the project."
+      },
+      "audit": {
+        "title": "External Audit",
+        "description": "Our accounts are prepared for review by an independent auditor outside the foundation. The auditor reports to the trustees, and the findings are published rather than circulated internally."
+      }
+    },
+    "reports": {
+      "heading": "Annual reports",
+      "subheading": "Each year of accounts, published in full once the audit is complete.",
+      "caption": "Annual reports and their publication status",
+      "columnReport": "Report",
+      "columnPublished": "Published",
+      "columnAction": "Download",
+      "download": "Download",
+      "pending": "Coming soon",
+      "year2025": "2025 Annual Report",
+      "year2024": "2024 Annual Report",
+      "year2023": "2023 Annual Report",
+      "note": "Reports will be posted here as each audit is completed."
+    },
+    "governance": {
+      "eyebrow": "Governance",
+      "heading": "Who decides, and who checks",
+      "paragraphOne": "Placeholder text. The foundation is directed by a board of trustees that sets policy, approves the annual budget and carries legal responsibility for how funds are used. Trustees serve fixed terms and are not paid for their service.",
+      "paragraphTwo": "Placeholder text. An audit committee drawn from outside the operational team reviews spending against the approved budget each quarter, and has standing authority to request any document or receipt without notice.",
+      "paragraphThree": "Placeholder text. Day-to-day delivery sits with an operational leadership team that reports to the board monthly. Field coordinators in each state report into that team and are responsible for the records behind every project.",
+      "photoLabel": "Trustees photo coming soon"
+    },
+    "registrations": {
+      "eyebrow": "Compliance",
+      "heading": "Regulatory registrations",
+      "pending": "Details forthcoming.",
+      "cac": {
+        "title": "CAC Registration (Nigeria)",
+        "description": "Incorporated with the Corporate Affairs Commission as a registered not-for-profit body."
+      },
+      "firs": {
+        "title": "FIRS Tax Registration",
+        "description": "Registered with the Federal Inland Revenue Service and filing as a charitable organisation."
+      },
+      "ndpr": {
+        "title": "NDPR Data Protection Compliance",
+        "description": "Beneficiary and donor records are handled under the Nigeria Data Protection Regulation."
+      }
+    },
+    "cta": {
+      "heading": "Questions about our accounts?",
+      "description": "Ask us anything about how a donation was spent and we will answer with the figures attached.",
+      "contact": "Contact Us",
+      "projects": "See Our Projects"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong. Please try again.",

@@ -39,6 +39,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/programs/hadiya/hadiya.component').then((m) => m.HadiyaComponent),
       },
+      {
+        path: 'transparency',
+        loadComponent: () =>
+          import('./pages/transparency/transparency.component').then(
+            (m) => m.TransparencyComponent
+          ),
+      },
       // Until the remaining pages exist, unknown paths fall back to the home page
       // so the nav links do not dead-end.
       { path: '**', redirectTo: '' },
