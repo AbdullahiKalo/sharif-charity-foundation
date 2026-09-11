@@ -304,23 +304,23 @@ export class HomeComponent {
 
   readonly featuredProjects: readonly FeaturedProject[] = [
     {
-      titleKey: 'home.projects.alFalah.title',
-      descriptionKey: 'home.projects.alFalah.description',
-      locationKey: 'home.projects.alFalah.location',
+      titleKey: 'projects.items.alFalah.title',
+      descriptionKey: 'projects.items.alFalah.description',
+      locationKey: 'projects.items.alFalah.location',
       status: 'completed',
       fundingPercent: null,
     },
     {
-      titleKey: 'home.projects.rahma.title',
-      descriptionKey: 'home.projects.rahma.description',
-      locationKey: 'home.projects.rahma.location',
+      titleKey: 'projects.items.rahma.title',
+      descriptionKey: 'projects.items.rahma.description',
+      locationKey: 'projects.items.rahma.location',
       status: 'ongoing',
       fundingPercent: 65,
     },
     {
-      titleKey: 'home.projects.ramadan.title',
-      descriptionKey: 'home.projects.ramadan.description',
-      locationKey: 'home.projects.ramadan.location',
+      titleKey: 'projects.items.ramadanFood.title',
+      descriptionKey: 'projects.items.ramadanFood.description',
+      locationKey: 'projects.items.ramadanFood.location',
       status: 'completed',
       fundingPercent: null,
     },

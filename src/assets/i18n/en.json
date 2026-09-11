@@ -263,6 +263,88 @@
       "ongoing": "Ongoing",
       "completed": "Completed",
       "planning": "Planning"
+    },
+    "gallery": {
+      "eyebrow": "Our Work",
+      "heading": "Projects we have delivered",
+      "subheading": "Every project verified. Every donation traced from receipt to handover.",
+      "count": "{{count}} projects shown",
+      "empty": "No projects match that filter yet.",
+      "note": "This is a preview using placeholder projects. Real project data will populate this page as it is verified and published.",
+      "ctaHeading": "Fund the next one",
+      "ctaDescription": "Tell us which of these projects speaks to you, or ask what is waiting on funding right now.",
+      "ctaContact": "Contact Us",
+      "ctaPrograms": "Our Programs"
+    },
+    "filters": {
+      "label": "Filter projects",
+      "all": "All",
+      "mosques": "Mosques",
+      "schools": "Schools",
+      "orphans": "Orphan Support",
+      "hadiya": "Ramadan & Eid"
+    },
+    "items": {
+      "alFalah": {
+        "title": "Al-Falah Mosque",
+        "description": "A community mosque with ablution facilities and a classroom for weekend Qur’an lessons.",
+        "location": "Sokoto, Nigeria"
+      },
+      "rahma": {
+        "title": "Rahma Primary School",
+        "description": "Six classrooms, furniture and a borehole serving children from the surrounding villages.",
+        "location": "Kaduna, Nigeria"
+      },
+      "ramadanFood": {
+        "title": "Ramadan 2026 Food Distribution",
+        "description": "Food parcels delivered to households through the month of Ramadan and on the day of Eid.",
+        "location": "Kano, Nigeria"
+      },
+      "orphanCohort": {
+        "title": "Orphan Sponsorship Cohort 2026",
+        "description": "Ninety newly registered children matched to sponsors for school fees, healthcare and monthly upkeep.",
+        "location": "Kano, Nigeria"
+      },
+      "yobeWell": {
+        "title": "Yobe Community Well Project",
+        "description": "A solar-powered borehole and storage tank for a village currently walking four kilometres for water.",
+        "location": "Damaturu, Yobe"
+      },
+      "eidClothing": {
+        "title": "Eid Clothing Drive 2026",
+        "description": "New clothes and shoes for children in sponsored households, delivered the week before Eid.",
+        "location": "Kano, Nigeria"
+      },
+      "bauchiGirls": {
+        "title": "Bauchi Girls School",
+        "description": "Four classrooms and a walled compound built so girls in the community can continue past primary level.",
+        "location": "Bauchi, Nigeria"
+      },
+      "zariaRebuild": {
+        "title": "Zaria Mosque Rebuild",
+        "description": "A collapsed mud-brick mosque rebuilt in blockwork with a roof designed for the rainy season.",
+        "location": "Zaria, Kaduna"
+      },
+      "winterBlankets": {
+        "title": "Winter Blanket Distribution",
+        "description": "Blankets and warm clothing distributed to elderly and widowed residents through the harmattan.",
+        "location": "Jos, Plateau"
+      },
+      "kebbiExtension": {
+        "title": "Kebbi Mosque Extension",
+        "description": "An extension and second ablution block for a mosque that has outgrown its Friday congregation.",
+        "location": "Birnin Kebbi, Nigeria"
+      },
+      "healthCamp": {
+        "title": "Sponsored Orphans Health Camp",
+        "description": "A three-day clinic offering check-ups, vaccinations and dental care to sponsored children.",
+        "location": "Kano, Nigeria"
+      },
+      "kanoIftar": {
+        "title": "Kano Iftar Program",
+        "description": "A nightly iftar meal served through Ramadan to travellers, students and families without means.",
+        "location": "Kano, Nigeria"
+      }
     }
   },
   "footer": {
@@ -355,22 +437,7 @@
     },
     "projects": {
       "heading": "Recent projects",
-      "viewAll": "View All Projects",
-      "alFalah": {
-        "title": "Al-Falah Mosque",
-        "description": "A community mosque with ablution facilities and a classroom for weekend Qur'an lessons.",
-        "location": "Sokoto, Nigeria"
-      },
-      "rahma": {
-        "title": "Rahma Primary School",
-        "description": "Six classrooms, furniture and a borehole serving children from the surrounding villages.",
-        "location": "Kaduna, Nigeria"
-      },
-      "ramadan": {
-        "title": "Ramadan 2026 Food Distribution",
-        "description": "Food parcels delivered to households through the month of Ramadan and on the day of Eid.",
-        "location": "Kano, Nigeria"
-      }
+      "viewAll": "View All Projects"
     },
     "cta": {
       "heading": "Ready to make an impact?",
