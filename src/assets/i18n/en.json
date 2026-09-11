@@ -17,6 +17,26 @@
     "menu": "Menu",
     "close": "Close"
   },
+  "pillars": {
+    "verifiability": {
+      "name": "Verifiability"
+    },
+    "traceability": {
+      "name": "Traceability"
+    },
+    "independence": {
+      "name": "Independence"
+    },
+    "accountability": {
+      "name": "Accountability"
+    },
+    "privacy": {
+      "name": "Privacy"
+    },
+    "continuity": {
+      "name": "Continuity"
+    }
+  },
   "projects": {
     "funding": "Funding",
     "funded": "{{percent}}% funded",
@@ -113,27 +133,21 @@
       "eyebrow": "Why Donors Trust Us",
       "heading": "Six pillars of donor trust",
       "verifiability": {
-        "name": "Verifiability",
         "description": "Every project is documented with photographs, receipts and named beneficiaries that donors can check."
       },
       "traceability": {
-        "name": "Traceability",
         "description": "Each donation is recorded against the specific project it funded, from receipt through to delivery."
       },
       "independence": {
-        "name": "Independence",
         "description": "We accept no political or partisan funding, so our decisions answer only to need on the ground."
       },
       "accountability": {
-        "name": "Accountability",
         "description": "Our accounts are reviewed and published, and every enquiry about spending receives a direct answer."
       },
       "privacy": {
-        "name": "Privacy",
         "description": "Beneficiaries are treated with dignity, and no family is photographed or named without consent."
       },
       "continuity": {
-        "name": "Continuity",
         "description": "Sponsorships and projects are seen through to completion rather than abandoned mid-way."
       }
     },
@@ -164,30 +178,84 @@
     }
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Who we are and why we serve.",
-    "mission": {
-      "title": "Our Mission",
-      "body": "Placeholder text for the foundation mission statement."
+    "hero": {
+      "eyebrow": "About Us",
+      "heading": "Our story, our purpose",
+      "subheading": "How the Sharif Charity Foundation came to be, and where we are going."
     },
-    "vision": {
-      "title": "Our Vision",
-      "body": "Placeholder text for the foundation vision statement."
+    "story": {
+      "eyebrow": "Our Story",
+      "heading": "From personal service to an institution",
+      "paragraphOne": "Placeholder narrative. The foundation began with a small circle of families in Kano pooling what they could to keep orphaned children in school. There was no office and no letterhead, only a list of names and a promise that the help would not stop halfway.",
+      "paragraphTwo": "Placeholder narrative. That work brought the founder alongside established international Islamic charities, first as a volunteer and later as the person trusted to carry their programmes into communities that outside organisations found hard to reach.",
+      "paragraphThree": "Placeholder narrative. Years of field delivery followed, handing out food parcels in Ramadan, supervising borehole and mosque projects, and sitting with widows to work out what a household actually needed. The lesson from that decade was simple: generosity fails when nobody is accountable for the last mile.",
+      "paragraphFour": "Placeholder narrative. Formalising the foundation was the answer to that lesson. The aim now is an institution rooted in Nigeria that can be audited, inherited and trusted, serving orphans, mosques, schools and families at a scale one person could never reach alone.",
+      "photoLabel": "Foundation history photo coming soon"
+    },
+    "founder": {
+      "eyebrow": "Leadership",
+      "heading": "Meet our founder",
+      "name": "[Founder Name]",
+      "role": "Founder & Chairman",
+      "bioOne": "Founder bio to be added — this is placeholder text describing years of field experience delivering aid in partnership with major international Islamic charities, and the vision to build an institutional foundation rooted in Nigeria and serving communities globally.",
+      "bioTwo": "Placeholder paragraph. A fuller account of the founder’s background, training and the projects personally supervised across northern Nigeria will replace this text.",
+      "bioThree": "Placeholder paragraph. A closing note on the founder’s priorities for the next decade of the foundation’s work will replace this text.",
+      "note": "Photo and full bio to be added.",
+      "photoLabel": "Founder photo coming soon"
     },
     "values": {
-      "title": "Our Values",
-      "integrity": "Integrity",
-      "compassion": "Compassion",
-      "transparency": "Transparency",
-      "accountability": "Accountability"
+      "eyebrow": "What Guides Us",
+      "heading": "Our values",
+      "faith": {
+        "title": "Faith",
+        "description": "Charity is an act of worship before it is an act of administration, and we treat every trust placed with us accordingly."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "What we promise a donor and what reaches a beneficiary are the same thing, documented at every step."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "A mosque, a classroom or a food parcel is built to last, because work done poorly wastes the giving behind it."
+      },
+      "service": {
+        "title": "Service",
+        "description": "We go to the households that are hardest to reach, and we treat the people we serve as neighbours rather than cases."
+      }
     },
-    "history": {
-      "title": "Our Story",
-      "body": "Placeholder text for the history of the foundation."
+    "pillars": {
+      "eyebrow": "How We Work",
+      "heading": "Six pillars of donor trust",
+      "subheading": "The commitments that govern how every naira entrusted to us is handled.",
+      "verifiability": {
+        "description": "Every project is documented with photographs, receipts and named beneficiaries. Donors may ask to see the file behind any project we have published. Where a claim cannot be evidenced, we do not make it."
+      },
+      "traceability": {
+        "description": "Each donation is recorded against the specific project it funded, from the moment it is received to the day the work is handed over. Pooled giving is allocated openly rather than absorbed into a general fund. A donor can follow their contribution end to end."
+      },
+      "independence": {
+        "description": "We accept no political or partisan funding, and no donation that carries conditions on who may benefit. Decisions about where to work answer to assessed need on the ground. That independence is what lets us go where others will not."
+      },
+      "accountability": {
+        "description": "Our accounts are reviewed and published, and every enquiry about spending receives a direct answer with figures attached. Mistakes are reported rather than buried. Trustees carry personal responsibility for the integrity of the record."
+      },
+      "privacy": {
+        "description": "Beneficiaries are treated with dignity, and no family is photographed, named or filmed without informed consent. Children are never used as fundraising imagery. Records that identify a household are held securely and shared with no one."
+      },
+      "continuity": {
+        "description": "Sponsorships run until a child completes their education, not until the funding cycle ends. Construction projects are seen through to handover and then revisited. We commit only to what we are able to finish."
+      }
     },
-    "team": {
-      "title": "Our Team",
-      "subtitle": "The people leading the work."
+    "partners": {
+      "heading": "In partnership with",
+      "logoLabel": "Partner logo",
+      "note": "Partner logos and details coming soon."
+    },
+    "cta": {
+      "heading": "Join our mission",
+      "description": "Work with us as a donor, a volunteer or an institutional partner, and help carry this work further.",
+      "contact": "Contact Us",
+      "programs": "Our Programs"
     }
   },
   "common": {

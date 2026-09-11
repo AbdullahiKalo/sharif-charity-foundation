@@ -338,32 +338,32 @@ export class HomeComponent {
   readonly pillars: readonly Pillar[] = [
     {
       number: 1,
-      nameKey: 'home.pillars.verifiability.name',
+      nameKey: 'pillars.verifiability.name',
       descriptionKey: 'home.pillars.verifiability.description',
     },
     {
       number: 2,
-      nameKey: 'home.pillars.traceability.name',
+      nameKey: 'pillars.traceability.name',
       descriptionKey: 'home.pillars.traceability.description',
     },
     {
       number: 3,
-      nameKey: 'home.pillars.independence.name',
+      nameKey: 'pillars.independence.name',
       descriptionKey: 'home.pillars.independence.description',
     },
     {
       number: 4,
-      nameKey: 'home.pillars.accountability.name',
+      nameKey: 'pillars.accountability.name',
       descriptionKey: 'home.pillars.accountability.description',
     },
     {
       number: 5,
-      nameKey: 'home.pillars.privacy.name',
+      nameKey: 'pillars.privacy.name',
       descriptionKey: 'home.pillars.privacy.description',
     },
     {
       number: 6,
-      nameKey: 'home.pillars.continuity.name',
+      nameKey: 'pillars.continuity.name',
       descriptionKey: 'home.pillars.continuity.description',
     },
   ];

@@ -10,6 +10,10 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('./pages/home/home.component').then((m) => m.HomeComponent),
       },
+      {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
+      },
       // Until the remaining pages exist, unknown paths fall back to the home page
       // so the nav links do not dead-end.
       { path: '**', redirectTo: '' },
