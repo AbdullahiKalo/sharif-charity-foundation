@@ -1,22 +1,11 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Web3FormsService } from '../../core/services/web3forms.service';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { ContactMethodComponent } from '../../shared/components/contact-method.component';
 import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner.component';
-
-/** Production Web3Forms access key for the foundation's contact form. */
-const WEB3FORMS_ACCESS_KEY = 'ebb9530e-c3c3-4318-ae2a-6f53d144ed01';
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-const FROM_NAME = 'Sharif Charity Foundation Website';
-
-/** Shape of the Web3Forms JSON response. */
-interface Web3FormsResponse {
-  readonly success: boolean;
-  readonly message?: string;
-}
 
 /**
  * A subject choice. `emailLabel` is the English text sent to Web3Forms, so the
@@ -321,7 +310,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
   `,
 })
 export class ContactComponent {
-  private readonly http = inject(HttpClient);
+  private readonly web3forms = inject(Web3FormsService);
   private readonly fb = inject(NonNullableFormBuilder);
   private readonly destroyRef = inject(DestroyRef);
 
@@ -365,28 +354,16 @@ export class ContactComponent {
     this.form.disable();
 
     const { name, email, subject, message } = this.form.getRawValue();
-    const payload = {
-      access_key: WEB3FORMS_ACCESS_KEY,
-      name,
-      email,
-      subject: this.emailLabelFor(subject),
-      message,
-      from_name: FROM_NAME,
-    };
 
-    this.http
-      .post<Web3FormsResponse>(WEB3FORMS_ENDPOINT, payload)
+    this.web3forms
+      .submit({ name, email, subject: this.emailLabelFor(subject), message })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
-        next: (response) => {
-          if (response.success) {
-            this.state.set('success');
-            this.form.enable();
-            return;
-          }
-          this.fail(response.message ?? '');
+        next: () => {
+          this.form.enable();
+          this.state.set('success');
         },
-        error: (error: HttpErrorResponse) => this.fail(this.messageFrom(error)),
+        error: (error: Error) => this.fail(error.message),
       });
   }
 
@@ -410,18 +387,6 @@ export class ContactComponent {
 
   private emailLabelFor(id: string): string {
     return SUBJECT_OPTIONS.find((option) => option.id === id)?.emailLabel ?? id;
-  }
-
-  /** Prefers whatever the API said; falls back to the transport-level message. */
-  private messageFrom(error: HttpErrorResponse): string {
-    const body: unknown = error.error;
-    if (typeof body === 'object' && body !== null && 'message' in body) {
-      const message = (body as { message: unknown }).message;
-      if (typeof message === 'string' && message !== '') {
-        return message;
-      }
-    }
-    return error.message;
   }
 
   private fail(message: string): void {

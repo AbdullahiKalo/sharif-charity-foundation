@@ -95,7 +95,8 @@
       "description": "Look through the programs we run and the projects we have delivered, then come back to us with your questions.",
       "programs": "Our Programs",
       "projects": "See Our Projects"
-    }
+    },
+    "whatsappLink": "https://wa.me/2349072102679"
   },
   "programs": {
     "learnMore": "Learn more",
@@ -661,6 +662,69 @@
       "description": "Ask us anything about how a donation was spent and we will answer with the figures attached.",
       "contact": "Contact Us",
       "projects": "See Our Projects"
+    }
+  },
+  "donate": {
+    "hero": {
+      "eyebrow": "Make A Donation",
+      "heading": "Your donation, honored and traced",
+      "subheading": "Every naira, dollar, dirham, or riyal you give is treated as an amanah. We take that seriously."
+    },
+    "now": {
+      "heading": "How to donate right now",
+      "intro": "Our online donation platform is launching soon. Until then, we accept donations through direct contact. Reach us using any of the channels below — a member of the foundation will confirm your donation, provide our verified bank details, and issue an official receipt.",
+      "internationalNote": "For donations from outside Nigeria, please mention your country when you reach out — we will guide you to the appropriate transfer method."
+    },
+    "ways": {
+      "heading": "Ways to give",
+      "arrange": "Contact us to arrange",
+      "oneTime": {
+        "title": "One-Time Donation",
+        "description": "A single gift of any size, directed to wherever the need is greatest that month. We will tell you exactly where it went."
+      },
+      "monthly": {
+        "title": "Monthly Sponsorship",
+        "description": "A standing monthly commitment, most often to sponsor a named orphan through their education. Sponsors receive termly progress reports."
+      },
+      "project": {
+        "title": "Project Funding",
+        "description": "Fund a specific mosque, school, borehole or distribution from start to handover. You receive the budget up front and the costs afterwards."
+      },
+      "zakat": {
+        "title": "Zakat & Sadaqah",
+        "description": "Zakat is held separately and disbursed only to eligible recipients under scholarly guidance. Sadaqah supports the wider work of the foundation."
+      }
+    },
+    "allocation": {
+      "heading": "Where your donation goes",
+      "body": "We publish detailed reports on how every donation is allocated. Every project has a public page with budget and progress.",
+      "note": "Placeholder allocation. Audited figures published in the annual transparency report.",
+      "programs": "Direct Programs",
+      "construction": "Construction",
+      "distribution": "Distribution",
+      "operations": "Operations"
+    },
+    "commitment": {
+      "heading": "Our commitment to you",
+      "subheading": "The six pillars that govern how your donation is handled, from receipt to handover."
+    },
+    "notify": {
+      "heading": "Online donations launching soon",
+      "body": "Sign up to be notified.",
+      "emailLabel": "Email address",
+      "placeholder": "Your email address",
+      "submit": "Notify me",
+      "sending": "Sending",
+      "success": "Thank you. We will let you know the moment online donations open.",
+      "invalidEmail": "Please enter a valid email address.",
+      "errorGeneric": "Your sign-up could not be sent.",
+      "errorFallback": "Please try again, or reach us directly via WhatsApp or email."
+    },
+    "cta": {
+      "heading": "Questions before you give?",
+      "description": "Ask us anything about how donations are handled, or read the full account of our controls and governance.",
+      "contact": "Contact Us",
+      "transparency": "Our Transparency"
     }
   },
   "common": {
