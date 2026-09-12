@@ -40,6 +40,11 @@ export const routes: Routes = [
           import('./pages/programs/hadiya/hadiya.component').then((m) => m.HadiyaComponent),
       },
       {
+        path: 'contact',
+        loadComponent: () =>
+          import('./pages/contact/contact.component').then((m) => m.ContactComponent),
+      },
+      {
         path: 'projects',
         loadComponent: () =>
           import('./pages/projects/projects.component').then((m) => m.ProjectsComponent),

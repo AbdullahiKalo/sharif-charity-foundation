@@ -47,7 +47,55 @@
     "phone": "+234 907 210 2679",
     "whatsapp": "+234 907 210 2679",
     "email": "muhammadsharifhamza@gmail.com",
-    "location": "Kano, Nigeria"
+    "location": "Kano, Nigeria",
+    "hero": {
+      "eyebrow": "Get In Touch",
+      "heading": "Contact the foundation",
+      "subheading": "For donations, partnerships, media, or general enquiries, reach us directly."
+    },
+    "methods": {
+      "heading": "Reach us directly",
+      "description": "WhatsApp is the fastest way to get an answer. For anything that needs a paper trail, email us and we will reply with it in writing."
+    },
+    "form": {
+      "heading": "Send us a message",
+      "name": "Full name",
+      "email": "Email address",
+      "subject": "Subject",
+      "subjectPlaceholder": "Choose a subject",
+      "message": "Message",
+      "optional": "(optional)",
+      "submit": "Send message",
+      "sending": "Sending",
+      "subjects": {
+        "general": "General Enquiry",
+        "donation": "Donation",
+        "partnership": "Partnership",
+        "media": "Media",
+        "other": "Other"
+      },
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subjectRequired": "Please choose a subject."
+      },
+      "successHeading": "Thank you",
+      "successMessage": "Your message has been received. We will respond as soon as possible.",
+      "sendAnother": "Send another message",
+      "errorGeneric": "Your message could not be sent.",
+      "errorFallback": "Please try again, or reach us directly via WhatsApp or email."
+    },
+    "map": {
+      "label": "Kano, Nigeria",
+      "note": "Map integration coming soon."
+    },
+    "cta": {
+      "heading": "Prefer to see the work first?",
+      "description": "Look through the programs we run and the projects we have delivered, then come back to us with your questions.",
+      "programs": "Our Programs",
+      "projects": "See Our Projects"
+    }
   },
   "programs": {
     "learnMore": "Learn more",

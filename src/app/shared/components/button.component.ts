@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'outline-light' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonWidth = 'auto' | 'full' | 'responsive';
 
 const BASE_CLASSES =
   'inline-flex items-center justify-center gap-2 rounded-full font-semibold no-underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
@@ -15,6 +16,12 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   'outline-light':
     'border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary-dark',
   ghost: 'bg-transparent text-primary hover:bg-bg-warm',
+};
+
+const WIDTH_CLASSES: Record<ButtonWidth, string> = {
+  auto: '',
+  full: 'w-full',
+  responsive: 'w-full sm:w-auto',
 };
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {
@@ -86,7 +93,8 @@ export class ButtonComponent {
 
   readonly type = input<'button' | 'submit' | 'reset'>('button');
   readonly disabled = input(false);
-  readonly fullWidth = input(false);
+  /** `responsive` fills the row on phones and shrinks to its content above that. */
+  readonly width = input<ButtonWidth>('auto');
   readonly ariaLabel = input<string | null>(null);
 
   /** Emitted only in native-button mode. */
@@ -97,7 +105,7 @@ export class ButtonComponent {
       BASE_CLASSES,
       VARIANT_CLASSES[this.variant()],
       SIZE_CLASSES[this.size()],
-      this.fullWidth() ? 'w-full' : '',
+      WIDTH_CLASSES[this.width()],
       this.disabled() ? 'pointer-events-none opacity-60' : '',
     ]
       .filter((part) => part !== '')
