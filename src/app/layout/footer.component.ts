@@ -16,11 +16,11 @@ interface FooterLink {
   imports: [RouterLink, TranslatePipe],
   template: `
     <footer class="w-full bg-primary text-white">
-      <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8 lg:py-12 md:py-16">
         <div class="grid grid-cols-1 gap-10 lg:grid-cols-4 lg:gap-8">
           <div>
             <p class="font-serif text-xl font-bold">{{ 'brand.name' | translate }}</p>
-            <p class="mt-1 text-sm text-gold">{{ 'brand.tagline' | translate }}</p>
+            <p class="mt-1 text-sm text-gold-on-dark">{{ 'brand.tagline' | translate }}</p>
             <p class="mt-4 text-sm leading-relaxed text-white/80">
               {{ 'footer.description' | translate }}
             </p>
@@ -33,7 +33,7 @@ interface FooterLink {
                 <li>
                   <a
                     [routerLink]="link.path"
-                    class="text-sm text-white/80 transition-colors hover:text-gold"
+                    class="text-sm text-white/80 transition-colors hover:text-gold-on-dark"
                   >
                     {{ link.key | translate }}
                   </a>
@@ -49,7 +49,7 @@ interface FooterLink {
                 <li>
                   <a
                     [routerLink]="link.path"
-                    class="text-sm text-white/80 transition-colors hover:text-gold"
+                    class="text-sm text-white/80 transition-colors hover:text-gold-on-dark"
                   >
                     {{ link.key | translate }}
                   </a>
@@ -66,7 +66,7 @@ interface FooterLink {
                 <span>{{ 'footer.email' | translate }}:</span>
                 <a
                   href="mailto:muhammadsharifhamza&#64;gmail.com"
-                  class="break-all transition-colors hover:text-gold"
+                  class="break-all transition-colors hover:text-gold-on-dark"
                 >
                   muhammadsharifhamza&#64;gmail.com
                 </a>
@@ -77,7 +77,7 @@ interface FooterLink {
                   href="https://wa.me/2349072102679"
                   target="_blank"
                   rel="noopener"
-                  class="transition-colors hover:text-gold"
+                  class="transition-colors hover:text-gold-on-dark"
                 >
                   +234 907 210 2679
                 </a>
@@ -89,7 +89,7 @@ interface FooterLink {
                 <a
                   href="#"
                   [attr.aria-label]="'footer.social.facebook' | translate"
-                  class="inline-flex text-white/80 transition-colors hover:text-gold"
+                  class="inline-flex text-white/80 transition-colors hover:text-gold-on-dark"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@ interface FooterLink {
                 <a
                   href="#"
                   [attr.aria-label]="'footer.social.instagram' | translate"
-                  class="inline-flex text-white/80 transition-colors hover:text-gold"
+                  class="inline-flex text-white/80 transition-colors hover:text-gold-on-dark"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ interface FooterLink {
                 <a
                   href="#"
                   [attr.aria-label]="'footer.social.youtube' | translate"
-                  class="inline-flex text-white/80 transition-colors hover:text-gold"
+                  class="inline-flex text-white/80 transition-colors hover:text-gold-on-dark"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ interface FooterLink {
                 <a
                   href="#"
                   [attr.aria-label]="'footer.social.x' | translate"
-                  class="inline-flex text-white/80 transition-colors hover:text-gold"
+                  class="inline-flex text-white/80 transition-colors hover:text-gold-on-dark"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

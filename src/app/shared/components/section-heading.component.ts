@@ -11,7 +11,7 @@ export type HeadingTone = 'light' | 'dark';
   template: `
     <div [class]="wrapperClasses()">
       @if (eyebrow(); as text) {
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">{{ text }}</p>
+        <p [class]="eyebrowClasses()">{{ text }}</p>
       }
 
       <h2 [class]="headingClasses()">{{ heading() }}</h2>
@@ -31,6 +31,12 @@ export class SectionHeadingComponent {
 
   readonly wrapperClasses = computed(() =>
     this.align() === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl text-left'
+  );
+
+  readonly eyebrowClasses = computed(
+    () =>
+      'text-xs font-semibold uppercase tracking-[0.2em] ' +
+      (this.tone() === 'dark' ? 'text-gold-on-dark' : 'text-gold-on-light')
   );
 
   readonly headingClasses = computed(

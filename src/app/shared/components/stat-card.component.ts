@@ -7,7 +7,10 @@ import { Component, input } from '@angular/core';
   template: `
     <div class="text-center">
       <p class="font-serif text-4xl font-bold leading-none text-primary sm:text-5xl">
-        {{ value() }}@if (suffix(); as mark) {<span class="text-gold">{{ mark }}</span>}
+        {{ value() }}
+        @if (suffix(); as mark) {
+          <span class="text-gold-on-light">{{ mark }}</span>
+        }
       </p>
       <p class="mt-3 text-sm font-medium uppercase tracking-wide text-text-muted">{{ label() }}</p>
       @if (caption(); as text) {

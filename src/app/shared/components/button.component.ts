@@ -12,7 +12,10 @@ const BASE_CLASSES =
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary: 'bg-primary text-white hover:bg-primary-dark',
   secondary: 'bg-gold text-primary-dark hover:bg-gold-dark',
-  outline: 'border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white',
+  // primary-dark rather than primary: the outline button also sits on gold
+  // bands, where primary green only reaches 3.6:1 against the background.
+  outline:
+    'border-2 border-primary-dark bg-transparent text-primary-dark hover:bg-primary-dark hover:text-white',
   'outline-light':
     'border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary-dark',
   ghost: 'bg-transparent text-primary hover:bg-bg-warm',

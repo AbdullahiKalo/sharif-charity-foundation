@@ -1,5 +1,13 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  effect,
+  inject,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -21,7 +29,9 @@ const BODY_SCROLL_LOCK = 'overflow-hidden';
   imports: [RouterLink, RouterLinkActive, TranslatePipe],
   template: `
     <header class="sticky top-0 z-50 border-b border-border-soft bg-white">
-      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+      >
         <a routerLink="/" class="group flex flex-col leading-tight" (click)="closeMenu()">
           <span class="font-serif text-lg font-bold text-primary sm:text-xl lg:text-2xl">
             {{ 'brand.name' | translate }}
@@ -57,6 +67,7 @@ const BODY_SCROLL_LOCK = 'overflow-hidden';
           </a>
 
           <button
+            #menuButton
             type="button"
             class="inline-flex h-11 w-11 items-center justify-center rounded-md text-primary transition-colors hover:bg-bg-warm lg:hidden"
             [attr.aria-label]="'nav.menu' | translate"
@@ -84,12 +95,16 @@ const BODY_SCROLL_LOCK = 'overflow-hidden';
         <div
           id="mobile-menu"
           class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          [attr.aria-label]="'nav.menu' | translate"
         >
           <div class="flex items-center justify-between border-b border-border-soft px-4 py-3">
             <span class="font-serif text-lg font-bold text-primary">
               {{ 'brand.name' | translate }}
             </span>
             <button
+              #closeButton
               type="button"
               class="inline-flex h-11 w-11 items-center justify-center rounded-md text-primary transition-colors hover:bg-bg-warm"
               [attr.aria-label]="'nav.close' | translate"
@@ -156,6 +171,17 @@ export class HeaderComponent {
 
   readonly menuOpen = signal(false);
 
+  private readonly menuButton = viewChild<ElementRef<HTMLButtonElement>>('menuButton');
+  private readonly closeButton = viewChild<ElementRef<HTMLButtonElement>>('closeButton');
+
+  constructor() {
+    // The overlay covers the hamburger, so move focus into it on open. The
+    // query only resolves while the overlay is rendered, which is the signal.
+    effect(() => {
+      this.closeButton()?.nativeElement.focus();
+    });
+  }
+
   toggleMenu(): void {
     this.setMenu(!this.menuOpen());
   }
@@ -171,7 +197,13 @@ export class HeaderComponent {
 
   /** Keeps the page behind the full-screen overlay from scrolling. */
   private setMenu(open: boolean): void {
+    const wasOpen = this.menuOpen();
     this.menuOpen.set(open);
     this.document.body.classList.toggle(BODY_SCROLL_LOCK, open);
+
+    // Closing returns focus to the control that opened the overlay.
+    if (wasOpen && !open) {
+      this.menuButton()?.nativeElement.focus();
+    }
   }
 }

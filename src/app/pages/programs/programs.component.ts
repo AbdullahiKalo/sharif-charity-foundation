@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { CardComponent } from '../../shared/components/card.component';
@@ -19,8 +20,8 @@ interface ProgramTile {
   template: `
     <!-- Page hero -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'programs.overview.eyebrow' | translate }}
         </p>
         <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -34,7 +35,7 @@ interface ProgramTile {
 
     <!-- Program grid -->
     <section class="bg-white">
-      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           @for (program of programs; track program.id) {
             <app-card
@@ -54,7 +55,7 @@ interface ProgramTile {
 
     <!-- CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'programs.overview.ctaHeading' | translate }}
         </h2>
@@ -73,7 +74,14 @@ interface ProgramTile {
     </section>
   `,
 })
-export class ProgramsComponent {
+export class ProgramsComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.programs.title', 'seo.programs.description', this.seoDestroyRef);
+  }
+
   readonly programs: readonly ProgramTile[] = [
     {
       id: 'orphans',

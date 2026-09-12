@@ -1,4 +1,5 @@
-import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -43,8 +44,8 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
   template: `
     <!-- 1. Page hero -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'contact.hero.eyebrow' | translate }}
         </p>
         <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -58,7 +59,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 2 + 3. Contact methods and form -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           <div>
             <h2 class="font-serif text-2xl font-bold text-primary">
@@ -111,6 +112,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="h-8 w-8 text-primary-dark"
+                    aria-hidden="true"
                   >
                     <path d="m5 13 4.5 4.5L19 7" />
                   </svg>
@@ -244,10 +246,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
                     width="responsive"
                   >
                     @if (state() === 'submitting') {
-                      <app-loading-spinner
-                        size="sm"
-                        [label]="'contact.form.sending' | translate"
-                      />
+                      <app-loading-spinner size="sm" [label]="'contact.form.sending' | translate" />
                     } @else {
                       {{ 'contact.form.submit' | translate }}
                     }
@@ -262,7 +261,9 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 4. Map placeholder -->
     <section class="bg-primary-dark">
-      <div class="mx-auto flex max-w-7xl flex-col items-center px-4 py-16 text-center sm:px-6">
+      <div
+        class="mx-auto flex max-w-7xl flex-col items-center px-4 py-12 md:py-16 text-center sm:px-6"
+      >
         <span
           class="flex h-16 w-16 items-center justify-center rounded-full bg-gold"
           aria-hidden="true"
@@ -276,6 +277,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
             stroke-linecap="round"
             stroke-linejoin="round"
             class="h-8 w-8 text-primary-dark"
+            aria-hidden="true"
           >
             <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
             <circle cx="12" cy="10" r="2.5" />
@@ -290,7 +292,7 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 5. CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'contact.cta.heading' | translate }}
         </h2>
@@ -309,14 +311,22 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
     </section>
   `,
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.contact.title', 'seo.contact.description', this.seoDestroyRef);
+  }
+
   private readonly web3forms = inject(Web3FormsService);
   private readonly fb = inject(NonNullableFormBuilder);
   private readonly destroyRef = inject(DestroyRef);
 
   readonly subjectOptions = SUBJECT_OPTIONS;
 
-  readonly labelClasses = 'mb-2 block text-xs font-semibold uppercase tracking-wide text-text-muted';
+  readonly labelClasses =
+    'mb-2 block text-xs font-semibold uppercase tracking-wide text-text-muted';
   readonly errorClasses = 'mt-2 text-sm text-red-600';
 
   readonly state = signal<SubmitState>('idle');

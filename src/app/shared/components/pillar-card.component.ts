@@ -9,10 +9,7 @@ export type PillarCardTone = 'light' | 'dark';
   standalone: true,
   template: `
     <article [class]="cardClasses()">
-      <span
-        class="shrink-0 font-serif text-4xl font-bold leading-none text-gold"
-        aria-hidden="true"
-      >
+      <span [class]="numberClasses()" aria-hidden="true">
         {{ displayNumber() }}
       </span>
       <div>
@@ -33,6 +30,12 @@ export class PillarCardComponent {
     () =>
       'flex h-full gap-5 rounded-2xl border p-7 ' +
       (this.tone() === 'dark' ? 'border-white/20 bg-white/5' : 'border-border-soft bg-white')
+  );
+
+  readonly numberClasses = computed(
+    () =>
+      'shrink-0 font-serif text-4xl font-bold leading-none ' +
+      (this.tone() === 'dark' ? 'text-gold-on-dark' : 'text-gold-on-light')
   );
 
   readonly nameClasses = computed(

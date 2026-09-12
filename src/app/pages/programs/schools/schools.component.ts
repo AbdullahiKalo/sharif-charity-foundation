@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { SeoService } from '../../../core/services/seo.service';
 import {
   ProgramPageComponent,
   ProgramPageConfig,
@@ -10,7 +11,14 @@ import {
   imports: [ProgramPageComponent],
   template: `<app-program-page [config]="config" />`,
 })
-export class SchoolsComponent {
+export class SchoolsComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.schools.title', 'seo.schools.description', this.seoDestroyRef);
+  }
+
   readonly config: ProgramPageConfig = {
     headingKey: 'programs.schools.title',
     subheadingKey: 'programs.schools.subheading',

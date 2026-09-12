@@ -1,4 +1,5 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { ProgramId } from '../../shared/components/program-icon.component';
@@ -59,8 +60,8 @@ const STATUS_FILTERS: readonly FilterId[] = ['ongoing', 'completed', 'planning']
   template: `
     <!-- 1. Page hero -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'projects.gallery.eyebrow' | translate }}
         </p>
         <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -74,7 +75,7 @@ const STATUS_FILTERS: readonly FilterId[] = ['ongoing', 'completed', 'planning']
 
     <!-- 2. Filter bar + 3. Grid -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <div
           class="flex flex-wrap justify-center gap-3"
           role="group"
@@ -123,7 +124,7 @@ const STATUS_FILTERS: readonly FilterId[] = ['ongoing', 'completed', 'planning']
 
     <!-- 5. CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'projects.gallery.ctaHeading' | translate }}
         </h2>
@@ -142,7 +143,14 @@ const STATUS_FILTERS: readonly FilterId[] = ['ongoing', 'completed', 'planning']
     </section>
   `,
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.projects.title', 'seo.projects.description', this.seoDestroyRef);
+  }
+
   readonly filters = FILTERS;
   readonly activeFilter = signal<FilterId>('all');
 

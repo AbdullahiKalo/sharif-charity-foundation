@@ -27,7 +27,7 @@ import { RouterLink } from '@angular/router';
         @if (routerLink(); as link) {
           <a
             [routerLink]="link"
-            class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-dark"
+            class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-on-light"
           >
             {{ label }}
             <span aria-hidden="true">&rarr;</span>
@@ -39,7 +39,7 @@ import { RouterLink } from '@angular/router';
               [href]="url"
               target="_blank"
               rel="noopener"
-              class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-dark"
+              class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold-on-light"
             >
               {{ label }}
               <span aria-hidden="true">&rarr;</span>

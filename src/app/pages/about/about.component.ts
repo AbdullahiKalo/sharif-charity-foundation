@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { CardComponent } from '../../shared/components/card.component';
@@ -34,8 +35,8 @@ interface DetailedPillar {
   template: `
     <!-- 1. Page hero -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'about.hero.eyebrow' | translate }}
         </p>
         <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -49,7 +50,7 @@ interface DetailedPillar {
 
     <!-- 2. Our story -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div>
             <app-section-heading
@@ -77,7 +78,7 @@ interface DetailedPillar {
 
     <!-- 3. Founder -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [eyebrow]="'about.founder.eyebrow' | translate"
           [heading]="'about.founder.heading' | translate"
@@ -96,7 +97,7 @@ interface DetailedPillar {
             <p class="font-serif text-3xl font-bold text-primary">
               {{ 'about.founder.name' | translate }}
             </p>
-            <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-gold">
+            <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-gold-on-light">
               {{ 'about.founder.role' | translate }}
             </p>
 
@@ -116,7 +117,7 @@ interface DetailedPillar {
 
     <!-- 4. Our values -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [eyebrow]="'about.values.eyebrow' | translate"
           [heading]="'about.values.heading' | translate"
@@ -135,7 +136,7 @@ interface DetailedPillar {
 
     <!-- 5. Six pillars of trust, in full -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           tone="dark"
           [eyebrow]="'about.pillars.eyebrow' | translate"
@@ -158,7 +159,7 @@ interface DetailedPillar {
 
     <!-- 6. Partners -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading [heading]="'about.partners.heading' | translate" />
 
         <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -179,7 +180,7 @@ interface DetailedPillar {
 
     <!-- 7. CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'about.cta.heading' | translate }}
         </h2>
@@ -198,7 +199,14 @@ interface DetailedPillar {
     </section>
   `,
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.about.title', 'seo.about.description', this.seoDestroyRef);
+  }
+
   readonly storyParagraphKeys: readonly string[] = [
     'about.story.paragraphOne',
     'about.story.paragraphTwo',

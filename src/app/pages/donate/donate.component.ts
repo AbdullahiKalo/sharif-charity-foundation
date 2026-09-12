@@ -1,4 +1,5 @@
-import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -82,8 +83,8 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
   template: `
     <!-- 1. Page hero -->
     <section class="border-t-4 border-gold bg-bg-warm">
-      <div class="mx-auto max-w-3xl px-4 py-28 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-dark">
+      <div class="mx-auto max-w-3xl px-4 py-20 md:py-28 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-light">
           {{ 'donate.hero.eyebrow' | translate }}
         </p>
         <h1
@@ -99,7 +100,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 2. How to donate right now -->
     <section class="bg-white">
-      <div class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <h2 class="text-center font-serif text-3xl font-bold text-primary sm:text-4xl">
           {{ 'donate.now.heading' | translate }}
         </h2>
@@ -133,7 +134,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 3. Ways to give -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <h2 class="text-center font-serif text-3xl font-bold text-primary sm:text-4xl">
           {{ 'donate.ways.heading' | translate }}
         </h2>
@@ -223,7 +224,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 4. Where your donation goes -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 class="font-serif text-3xl font-bold leading-tight text-primary sm:text-4xl">
@@ -274,7 +275,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 5. Our commitment -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <h2 class="text-center font-serif text-3xl font-bold text-white sm:text-4xl">
           {{ 'donate.commitment.heading' | translate }}
         </h2>
@@ -287,7 +288,10 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
             <li
               class="flex flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-5 text-center"
             >
-              <span class="font-serif text-2xl font-bold leading-none text-gold" aria-hidden="true">
+              <span
+                class="font-serif text-2xl font-bold leading-none text-gold-on-dark"
+                aria-hidden="true"
+              >
                 {{ pillarNumber(i) }}
               </span>
               <span class="text-sm font-semibold text-white">{{ key | translate }}</span>
@@ -299,7 +303,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 6. Coming soon banner -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-12 md:py-16 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-2xl font-bold text-primary-dark sm:text-3xl">
           {{ 'donate.notify.heading' | translate }}
         </h2>
@@ -348,9 +352,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
             <div class="mt-3 text-sm text-primary-dark" role="alert">
               <p class="font-semibold">
                 {{
-                  signupError() !== ''
-                    ? signupError()
-                    : ('donate.notify.errorGeneric' | translate)
+                  signupError() !== '' ? signupError() : ('donate.notify.errorGeneric' | translate)
                 }}
               </p>
               <p class="mt-1">{{ 'donate.notify.errorFallback' | translate }}</p>
@@ -362,7 +364,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
 
     <!-- 7. Final CTA band -->
     <section class="bg-primary-dark">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-white sm:text-4xl">
           {{ 'donate.cta.heading' | translate }}
         </h2>
@@ -381,7 +383,14 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
     </section>
   `,
 })
-export class DonateComponent {
+export class DonateComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.donate.title', 'seo.donate.description', this.seoDestroyRef);
+  }
+
   private readonly web3forms = inject(Web3FormsService);
   private readonly fb = inject(NonNullableFormBuilder);
   private readonly destroyRef = inject(DestroyRef);

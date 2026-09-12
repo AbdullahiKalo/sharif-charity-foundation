@@ -66,6 +66,7 @@ const PROGRESS_CLASSES: readonly string[] = [
           stroke-linecap="round"
           stroke-linejoin="round"
           class="h-10 w-10 text-white/60"
+          aria-hidden="true"
         >
           <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 11h.01M15 11h.01" />
         </svg>

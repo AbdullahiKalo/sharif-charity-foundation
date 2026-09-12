@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { CardComponent } from '../../shared/components/card.component';
@@ -39,8 +40,8 @@ interface AnnualReport {
   template: `
     <!-- 1. Page hero -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'transparency.hero.eyebrow' | translate }}
         </p>
         <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -54,7 +55,7 @@ interface AnnualReport {
 
     <!-- 2. Live impact band -->
     <section class="border-b border-border-soft bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <h2 class="sr-only">{{ 'transparency.impact.heading' | translate }}</h2>
         <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           @for (stat of ledgerStats; track stat.labelKey) {
@@ -71,7 +72,7 @@ interface AnnualReport {
 
     <!-- 3. How we handle funds -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [eyebrow]="'transparency.funds.eyebrow' | translate"
           [heading]="'transparency.funds.heading' | translate"
@@ -90,7 +91,7 @@ interface AnnualReport {
 
     <!-- 4. Annual reports -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [heading]="'transparency.reports.heading' | translate"
           [subheading]="'transparency.reports.subheading' | translate"
@@ -98,7 +99,11 @@ interface AnnualReport {
 
         <div class="mt-12 overflow-x-auto rounded-2xl border border-border-soft bg-white">
           <table class="w-full min-w-[34rem] border-collapse text-left">
-            <caption class="sr-only">{{ 'transparency.reports.caption' | translate }}</caption>
+            <caption class="sr-only">
+              {{
+                'transparency.reports.caption' | translate
+              }}
+            </caption>
             <thead>
               <tr class="border-b border-border-soft">
                 <th
@@ -148,7 +153,7 @@ interface AnnualReport {
 
     <!-- 5. Governance -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div>
             <app-section-heading
@@ -176,7 +181,7 @@ interface AnnualReport {
 
     <!-- 6. Regulatory registrations -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [eyebrow]="'transparency.registrations.eyebrow' | translate"
           [heading]="'transparency.registrations.heading' | translate"
@@ -199,7 +204,7 @@ interface AnnualReport {
 
     <!-- 7. CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'transparency.cta.heading' | translate }}
         </h2>
@@ -218,7 +223,14 @@ interface AnnualReport {
     </section>
   `,
 })
-export class TransparencyComponent {
+export class TransparencyComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.transparency.title', 'seo.transparency.description', this.seoDestroyRef);
+  }
+
   /** Stamped on each figure so a stale page is obvious to the reader. */
   readonly currentYear = new Date().getFullYear();
 

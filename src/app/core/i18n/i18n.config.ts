@@ -1,7 +1,12 @@
 import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
+import {
+  MissingTranslationHandler,
+  TranslateLoader,
+  provideTranslateService,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HumanisedMissingTranslationHandler } from './missing-translation.handler';
 
 /**
  * A language the site can be rendered in.
@@ -43,6 +48,10 @@ export function provideI18n(): EnvironmentProviders {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient],
+      },
+      missingTranslationHandler: {
+        provide: MissingTranslationHandler,
+        useClass: HumanisedMissingTranslationHandler,
       },
     }),
   ]);

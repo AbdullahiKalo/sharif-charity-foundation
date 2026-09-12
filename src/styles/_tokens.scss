@@ -8,9 +8,14 @@
   --color-primary-dark: #083f26;
   --color-primary-light: #1a7a4d;
 
-  /* Brand — gold accent */
+  /* Brand — gold accent.
+   * `gold` and `gold-dark` are surface colours: bands, swatches, dividers.
+   * They fail WCAG AA as text, so text uses one of the two below instead —
+   * `gold-on-dark` over the greens, `gold-on-light` over white and bg-warm. */
   --color-gold: #c9a961;
   --color-gold-dark: #a68a4e;
+  --color-gold-on-dark: #dcc68c;
+  --color-gold-on-light: #877030;
 
   /* Surfaces */
   --color-bg-warm: #faf8f4;

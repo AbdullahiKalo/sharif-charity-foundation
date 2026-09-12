@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { SeoService } from '../../core/services/seo.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button.component';
 import { CardComponent } from '../../shared/components/card.component';
@@ -77,11 +78,13 @@ interface FeaturedProject {
         <rect width="100%" height="100%" fill="url(#hero-diagonal-stripes)" />
       </svg>
 
-      <div class="relative mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+      <div class="relative mx-auto max-w-4xl px-4 py-20 md:py-28 text-center sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-on-dark">
           {{ 'home.hero.eyebrow' | translate }}
         </p>
-        <h1 class="mt-5 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+        <h1
+          class="mt-5 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+        >
           {{ 'home.hero.title' | translate }}
         </h1>
         <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
@@ -100,7 +103,7 @@ interface FeaturedProject {
 
     <!-- 2. Impact statistics band -->
     <section class="border-b border-border-soft bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-12 md:py-16 sm:px-6 lg:px-8">
         <h2 class="sr-only">{{ 'home.impact.title' | translate }}</h2>
         <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           @for (stat of impactStats; track stat.labelKey) {
@@ -116,7 +119,7 @@ interface FeaturedProject {
 
     <!-- 3. Our Mission -->
     <section class="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <app-section-heading
@@ -143,7 +146,7 @@ interface FeaturedProject {
 
     <!-- 4. Programs preview -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           [eyebrow]="'home.programs.eyebrow' | translate"
           [heading]="'home.programs.heading' | translate"
@@ -168,7 +171,7 @@ interface FeaturedProject {
 
     <!-- 5. Six pillars of trust -->
     <section class="bg-primary">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading
           tone="dark"
           [eyebrow]="'home.pillars.eyebrow' | translate"
@@ -190,7 +193,7 @@ interface FeaturedProject {
 
     <!-- 6. Featured projects -->
     <section class="bg-bg-warm">
-      <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 sm:px-6 lg:px-8">
         <app-section-heading [heading]="'home.projects.heading' | translate" />
 
         <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -215,7 +218,7 @@ interface FeaturedProject {
 
     <!-- 7. Final CTA band -->
     <section class="bg-gold">
-      <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl px-4 py-16 md:py-24 text-center sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl font-bold leading-tight text-primary-dark sm:text-4xl">
           {{ 'home.cta.heading' | translate }}
         </h2>
@@ -234,7 +237,14 @@ interface FeaturedProject {
     </section>
   `,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+  private readonly seoDestroyRef = inject(DestroyRef);
+
+  ngOnInit(): void {
+    this.seo.apply('seo.home.title', 'seo.home.description', this.seoDestroyRef);
+  }
+
   readonly impactStats: readonly ImpactStat[] = [
     { valueKey: 'home.impact.orphans.value', labelKey: 'home.impact.orphans.label' },
     { valueKey: 'home.impact.mosques.value', labelKey: 'home.impact.mosques.label' },

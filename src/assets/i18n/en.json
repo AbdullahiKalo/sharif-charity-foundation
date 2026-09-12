@@ -3,6 +3,52 @@
     "name": "Sharif Charity Foundation",
     "tagline": "Serving in Trust. Delivering in Faith."
   },
+  "seo": {
+    "home": {
+      "title": "Trust. Transparency. Impact.",
+      "description": "Sharif Charity Foundation sponsors orphans, builds mosques and schools, and delivers food and gifts to families across Nigeria. Every donation traced from receipt to handover."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "How Sharif Charity Foundation began, who leads it, the values behind the work, and the six pillars that govern how donations are handled."
+    },
+    "programs": {
+      "title": "Our Programs",
+      "description": "Four core programs: orphan sponsorship, mosque construction, school construction, and Ramadan and Eid Hadiya distributions."
+    },
+    "orphans": {
+      "title": "Orphan Sponsorship",
+      "description": "Monthly support covering food, clothing, healthcare and schooling for a named orphaned child, with termly progress reports to the sponsor."
+    },
+    "mosques": {
+      "title": "Mosque Construction",
+      "description": "Building and renovating mosques with ablution facilities and boreholes, using contracted local labour and supervised to handover."
+    },
+    "schools": {
+      "title": "School Construction",
+      "description": "Classrooms, furniture and learning materials for communities where the nearest school is too far to walk, followed up term by term."
+    },
+    "hadiya": {
+      "title": "Ramadan & Eid Hadiya",
+      "description": "Food parcels sized to the household and delivered to the door through Ramadan, with clothing and gifts for children on Eid."
+    },
+    "projects": {
+      "title": "Our Projects",
+      "description": "Mosques, schools, wells and distributions delivered by Sharif Charity Foundation, filterable by program and by delivery status."
+    },
+    "transparency": {
+      "title": "Transparency",
+      "description": "How funds are segregated, approved and audited at Sharif Charity Foundation, plus governance, annual reports and regulatory registrations."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Reach Sharif Charity Foundation in Kano, Nigeria by WhatsApp, phone or email for donations, partnerships, media or general enquiries."
+    },
+    "donate": {
+      "title": "Donate",
+      "description": "Give to Sharif Charity Foundation by one-time gift, monthly sponsorship, project funding, or zakat and sadaqah. Contact us to arrange your donation."
+    }
+  },
   "nav": {
     "primary": "Primary navigation",
     "home": "Home",
