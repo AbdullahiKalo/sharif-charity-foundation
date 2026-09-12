@@ -28,8 +28,23 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
+# Other editors
+.fleet/
+.nova/
+.zed/
+*.swp
+*.swo
+
+# Environment files — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Deployment
+.vercel
+
 # Miscellaneous
-/.angular/cache
+/.angular
 .sass-cache/
 /connect.lock
 /coverage
