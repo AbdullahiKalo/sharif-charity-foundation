@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  computed,
   effect,
   inject,
   signal,
@@ -23,12 +24,19 @@ interface NavLink {
 
 const BODY_SCROLL_LOCK = 'overflow-hidden';
 
+/** Scroll distance past which the header gains its backdrop and shadow. */
+const SCROLLED_THRESHOLD = 12;
+
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, TranslatePipe],
+  // Stickiness belongs on the host, not the inner <header>. A sticky element is
+  // confined to its containing block, and the inner header's containing block is
+  // this host, which is exactly header-height tall — so it had nowhere to travel.
+  host: { class: 'sticky top-0 z-50 block' },
   template: `
-    <header class="sticky top-0 z-50 border-b border-border-soft bg-white">
+    <header [class]="headerClasses()">
       <div
         class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
       >
@@ -171,6 +179,17 @@ export class HeaderComponent {
 
   readonly menuOpen = signal(false);
 
+  /** True once the page has scrolled past {@link SCROLLED_THRESHOLD}. */
+  private readonly scrolled = signal(false);
+
+  readonly headerClasses = computed(
+    () =>
+      'w-full transition-shadow duration-200 ' +
+      (this.scrolled()
+        ? 'bg-white/80 shadow-md backdrop-blur-md supports-[backdrop-filter]:bg-white/70'
+        : 'bg-white')
+  );
+
   private readonly menuButton = viewChild<ElementRef<HTMLButtonElement>>('menuButton');
   private readonly closeButton = viewChild<ElementRef<HTMLButtonElement>>('closeButton');
 
@@ -193,6 +212,12 @@ export class HeaderComponent {
   @HostListener('document:keydown.escape')
   onEscape(): void {
     this.closeMenu();
+  }
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    const offset = this.document.defaultView?.scrollY ?? 0;
+    this.scrolled.set(offset > SCROLLED_THRESHOLD);
   }
 
   /** Keeps the page behind the full-screen overlay from scrolling. */

@@ -1,11 +1,11 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 /** A single impact statistic: large number over a short label. */
 @Component({
   selector: 'app-stat-card',
   standalone: true,
   template: `
-    <div class="text-center">
+    <div [class]="wrapperClasses()">
       <p class="font-serif text-4xl font-bold leading-none text-primary sm:text-5xl">
         {{ value() }}
         @if (suffix(); as mark) {
@@ -26,4 +26,16 @@ export class StatCardComponent {
   readonly suffix = input<string | null>(null);
   readonly label = input.required<string>();
   readonly caption = input<string | null>(null);
+
+  /**
+   * Gives the figure a card surface with the site-wide hover treatment. Off by
+   * default so bare stat strips keep their plain look.
+   */
+  readonly interactive = input(false);
+
+  readonly wrapperClasses = computed(() =>
+    this.interactive()
+      ? 'card-alive h-full rounded-2xl border border-border-soft bg-white p-6 text-center shadow-md'
+      : 'text-center'
+  );
 }

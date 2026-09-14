@@ -5,6 +5,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* The one hover treatment every card on the site shares: a 4px lift, a
+   * deeper shadow and a green accent ring, over 200ms. Cards on a dark green
+   * band use the -dark variant so the accent stays visible. */
+  .card-alive {
+    @apply transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-primary;
+  }
+
+  .card-alive-dark {
+    @apply transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-gold;
+  }
+
+  /* Expands a link's hit area to cover its nearest positioned ancestor, so a
+   * whole card is clickable while the anchor stays the single focusable
+   * element. Anything interactive inside that card needs `relative z-[2]` to
+   * sit above this overlay. */
+  .stretched-link::after {
+    content: '';
+    @apply absolute inset-0 z-[1] rounded-2xl;
+  }
+
+  /* Respect a reduced-motion preference: keep the shadow and ring, drop the
+   * movement. */
+  @media (prefers-reduced-motion: reduce) {
+    .card-alive,
+    .card-alive-dark {
+      @apply transition-none hover:translate-y-0;
+    }
+  }
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;

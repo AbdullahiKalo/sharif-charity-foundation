@@ -29,7 +29,9 @@ export class PillarCardComponent {
   readonly cardClasses = computed(
     () =>
       'flex h-full gap-5 rounded-2xl border p-7 ' +
-      (this.tone() === 'dark' ? 'border-white/20 bg-white/5' : 'border-border-soft bg-white')
+      (this.tone() === 'dark'
+        ? 'card-alive-dark border-white/20 bg-white/5'
+        : 'card-alive border-border-soft bg-white shadow-sm')
   );
 
   readonly numberClasses = computed(

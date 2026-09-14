@@ -51,7 +51,7 @@ const PROGRESS_CLASSES: readonly string[] = [
   imports: [TranslatePipe],
   template: `
     <article
-      class="flex h-full flex-col overflow-hidden rounded-2xl border border-border-soft bg-white shadow-sm transition-shadow hover:shadow-md"
+      class="card-alive flex h-full flex-col overflow-hidden rounded-2xl border border-border-soft bg-white shadow-sm"
     >
       <div
         class="flex h-44 items-center justify-center bg-gradient-to-br from-primary-light to-primary-dark"

@@ -64,6 +64,7 @@ interface AnnualReport {
               [suffix]="stat.suffix"
               [label]="stat.labelKey | translate"
               [caption]="'transparency.impact.asOf' | translate: { year: currentYear }"
+              [interactive]="true"
             />
           }
         </div>
@@ -83,6 +84,7 @@ interface AnnualReport {
             <app-card
               [title]="card.titleKey | translate"
               [description]="card.descriptionKey | translate"
+              [elevated]="true"
             />
           }
         </div>
@@ -97,7 +99,7 @@ interface AnnualReport {
           [subheading]="'transparency.reports.subheading' | translate"
         />
 
-        <div class="mt-12 overflow-x-auto rounded-2xl border border-border-soft bg-white">
+        <div class="mt-12 overflow-x-auto rounded-2xl border border-border-soft bg-bg-warm">
           <table class="w-full min-w-[34rem] border-collapse text-left">
             <caption class="sr-only">
               {{
@@ -127,8 +129,10 @@ interface AnnualReport {
             </thead>
             <tbody>
               @for (report of reports; track report.titleKey) {
-                <tr class="border-b border-border-soft last:border-b-0">
-                  <td class="px-6 py-5 font-medium text-primary">
+                <tr
+                  class="border-b border-border-soft bg-white transition-colors last:border-b-0 hover:bg-bg-warm"
+                >
+                  <td class="border-l-2 border-gold px-6 py-5 font-medium text-primary">
                     {{ report.titleKey | translate }}
                   </td>
                   <td class="px-6 py-5 text-sm italic text-text-muted">
@@ -192,6 +196,7 @@ interface AnnualReport {
             <app-card
               [title]="card.titleKey | translate"
               [description]="card.descriptionKey | translate"
+              [elevated]="true"
             >
               <span class="text-sm italic text-text-muted">
                 {{ 'transparency.registrations.pending' | translate }}

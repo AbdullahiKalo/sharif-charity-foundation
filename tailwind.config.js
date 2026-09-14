@@ -22,8 +22,10 @@ module.exports = {
         'border-soft': 'var(--color-border-soft)',
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        // Both families resolve to Arial. `font-serif` is kept as a named role
+        // for headings so the hierarchy can be retargeted in one place later.
+        serif: ['Arial', 'Helvetica', 'sans-serif'],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
       },
     },
   },

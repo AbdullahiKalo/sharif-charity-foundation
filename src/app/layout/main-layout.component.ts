@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { WhatsAppBubbleComponent } from '../shared/components/whatsapp-bubble.component';
 import { FooterComponent } from './footer.component';
 import { HeaderComponent } from './header.component';
 
@@ -11,7 +12,7 @@ import { HeaderComponent } from './header.component';
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, WhatsAppBubbleComponent],
   template: `
     <div class="flex min-h-screen flex-col">
       <app-header />
@@ -19,6 +20,7 @@ import { HeaderComponent } from './header.component';
         <router-outlet />
       </main>
       <app-footer />
+      <app-whatsapp-bubble />
     </div>
   `,
 })

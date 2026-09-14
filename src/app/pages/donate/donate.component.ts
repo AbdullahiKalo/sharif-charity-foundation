@@ -286,7 +286,7 @@ type SignupState = 'idle' | 'submitting' | 'success' | 'error';
         <ul class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           @for (key of pillarNameKeys; track key; let i = $index) {
             <li
-              class="flex flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-5 text-center"
+              class="card-alive-dark flex flex-col items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-3 py-5 text-center"
             >
               <span
                 class="font-serif text-2xl font-bold leading-none text-gold-on-dark"
