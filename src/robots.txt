@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sharif-charity-foundation.vercel.app/sitemap.xml
+Sitemap: https://sharifcharity.org/sitemap.xml

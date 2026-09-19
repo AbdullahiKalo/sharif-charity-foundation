@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Sitemap for Sharif Charity Foundation. Current host: Vercel.
-  When a custom domain is added, update all <loc> entries and robots.txt.
+  Sitemap for Sharif Charity Foundation, served from the custom domain
+  sharifcharity.org. Hosting is on Vercel, but the Vercel host name should not
+  appear here: search engines must only be pointed at the canonical domain.
+  If the domain ever changes, update every <loc> below and the Sitemap line in
+  robots.txt together.
   Refresh <lastmod> tags when a page's content actually changes.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/</loc>
+    <loc>https://sharifcharity.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/about</loc>
+    <loc>https://sharifcharity.org/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/programs</loc>
+    <loc>https://sharifcharity.org/programs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/programs/orphans</loc>
+    <loc>https://sharifcharity.org/programs/orphans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/programs/mosques</loc>
+    <loc>https://sharifcharity.org/programs/mosques</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/programs/schools</loc>
+    <loc>https://sharifcharity.org/programs/schools</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/programs/hadiya</loc>
+    <loc>https://sharifcharity.org/programs/hadiya</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/projects</loc>
+    <loc>https://sharifcharity.org/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/transparency</loc>
+    <loc>https://sharifcharity.org/transparency</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/donate</loc>
+    <loc>https://sharifcharity.org/donate</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sharif-charity-foundation.vercel.app/contact</loc>
+    <loc>https://sharifcharity.org/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
